@@ -5,8 +5,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -28,7 +26,7 @@ import androidx.navigation.NavController
 fun SwipeScreen(navController: NavController) {
     // A surface container using the 'background' color from the theme
     Surface(color = MaterialTheme.colors.background) {
-        TopBar()
+//        TopBar()
         Column() {
             PoliticalAppIconTop()
             HeroCard(
@@ -163,22 +161,22 @@ fun PoliticalAppIconTop(modifier: Modifier = Modifier) {
     }
 }
 
-@Composable
-fun TopBar(
-    modifier: Modifier = Modifier
-) {
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween,
-        modifier = modifier.fillMaxWidth()
-    ) {
-        Icon(
-            imageVector = Icons.Default.Menu,
-            contentDescription = "Back",
-            tint = Color.Black,
-            modifier = Modifier
-                .size(40.dp)
-                .padding(start = 5.dp)
-        )
-    }
-}
+//@Composable
+//fun TopBar(
+//    modifier: Modifier = Modifier
+//) {
+//    Row(
+//        verticalAlignment = Alignment.CenterVertically,
+//        horizontalArrangement = Arrangement.SpaceBetween,
+//        modifier = modifier.fillMaxWidth()
+//    ) {
+//        Icon(
+//            imageVector = Icons.Default.Menu,
+//            contentDescription = "Back",
+//            tint = Color.Black,
+//            modifier = Modifier
+//                .size(40.dp)
+//                .padding(start = 5.dp)
+//        )
+//    }
+//}

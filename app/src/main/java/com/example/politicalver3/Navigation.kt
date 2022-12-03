@@ -38,15 +38,40 @@ fun Navigation() {
         }
 
         composable(route = Screen.LoginScreen.route) {
-            LoginScreen(navController = navCotroller)
+
+                LoginScreen(navController = navCotroller)
+
         }
 
         composable(route = Screen.PreferenceScreen.route) {
-            PreferenceScreen(navController = navCotroller)
+            DrawerTopBar(navController = navCotroller , screen = { navController ->
+                // this is the screen that will be drawn after the drawer
+                // swipe screen
+                PreferenceScreen(navController = navController)
+
+            })
+
+
+
         }
 
         composable(route = Screen.SwipeScreen.route) {
-            SwipeScreen(navController = navCotroller)
+            DrawerTopBar(navController = navCotroller , screen = { navController ->
+                // this is the screen that will be drawn after the drawer
+                // swipe screen
+                SwipeScreen(navController = navController)
+
+            })
+        }
+
+        composable(route = Screen.CelebProfileScreen.route) {
+            DrawerTopBar(navController = navCotroller , screen = { navController ->
+                // this is the screen that will be drawn after the drawer
+                // swipe screen
+                CelebProfileScreen(navController = navController)
+
+            })
+
         }
 
 
@@ -55,7 +80,6 @@ fun Navigation() {
 
     }
 }
-
 
 
 
