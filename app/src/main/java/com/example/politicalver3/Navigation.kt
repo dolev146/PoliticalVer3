@@ -71,7 +71,24 @@ fun Navigation() {
                 CelebProfileScreen(navController = navController)
 
             })
+        }
 
+        composable(route = Screen.UserProfileScreen.route) {
+            DrawerTopBar(navController = navCotroller , screen = { navController ->
+                // this is the screen that will be drawn after the drawer
+                // swipe screen
+                UserProfileScreen(navController = navController)
+
+            })
+        }
+
+        composable(route = Screen.AddCelebScreen.route) {
+            DrawerTopBar(navController = navCotroller , screen = { navController ->
+                // this is the screen that will be drawn after the drawer
+                // swipe screen
+                AddCelebScreen(navController = navController)
+
+            })
         }
 
 

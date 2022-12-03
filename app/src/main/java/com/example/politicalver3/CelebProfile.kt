@@ -5,14 +5,10 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-
-import androidx.compose.material.Icon
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -56,15 +52,19 @@ fun MoreInfo(information_param: String, modifier: Modifier = Modifier) {
             fontWeight = FontWeight.Bold
         )
 
-        Text(
-            text = information_param,
-            fontSize = 20.sp,
-            fontWeight = FontWeight.Normal,
-            color = Color.Black,
-            maxLines = 5,
-            overflow = TextOverflow.Ellipsis,
-            modifier = Modifier.heightIn(max = 70.dp)
-        )
+        LazyColumn(content = {
+            item {
+                Text(
+                    text = information_param,
+                    color = Color.Black,
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Normal,
+                    maxLines = 10,
+                    overflow = TextOverflow.Ellipsis
+                )
+            }
+        })
+
     }
 }
 
@@ -177,17 +177,9 @@ fun TopBar(
 ) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween,
+        horizontalArrangement = Arrangement.Center,
         modifier = modifier.fillMaxWidth()
     ) {
-        Icon(
-            imageVector = Icons.Default.Menu,
-            contentDescription = "Back",
-            tint = Color.White,
-            modifier = Modifier
-                .size(40.dp)
-                .padding(start = 5.dp)
-        )
         Text(
             text = "Profile",
             overflow = TextOverflow.Ellipsis,
@@ -195,7 +187,7 @@ fun TopBar(
             fontSize = 40.sp,
             color = Color.White
         )
-        Spacer(modifier = Modifier.size(40.dp))
+
     }
 
 }

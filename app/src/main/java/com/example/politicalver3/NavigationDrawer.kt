@@ -8,9 +8,7 @@ import androidx.compose.material.Icon
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Info
-import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
@@ -103,10 +101,22 @@ fun DrawerTopBar(navController: NavController, screen: @Composable (navControlle
                     icon = Icons.Default.Settings
                 ),
                 MenuItem(
-                    id = "profile",
-                    title = "Profile",
-                    contentDescription = "Go to profile screen",
+                    id = "celeb profile",
+                    title = "Celeb Profile",
+                    contentDescription = "Go to Celeb profile screen",
                     icon = Icons.Default.Info
+                ),
+                MenuItem(
+                    id = "user profile",
+                    title = "User Profile",
+                    contentDescription = "Go to User profile screen",
+                    icon = Icons.Default.AccountBox
+                ),
+                MenuItem(
+                    id = "add celeb",
+                    title = "Add Celeb",
+                    contentDescription = "Go to User profile screen",
+                    icon = Icons.Default.Add
                 ),
             ), onItemClick = {
                 when (it.id) {
@@ -116,9 +126,18 @@ fun DrawerTopBar(navController: NavController, screen: @Composable (navControlle
                     "settings" -> {
                         navController.navigate(Screen.PreferenceScreen.route)
                     }
-                    "profile" -> {
+                    "celeb profile" -> {
                         navController.navigate(Screen.CelebProfileScreen.route)
                     }
+                    "user profile" -> {
+                        navController.navigate(Screen.UserProfileScreen.route)
+                    }
+                    "add celeb" -> {
+                        navController.navigate(Screen.AddCelebScreen.route)
+                    }
+
+
+
                 }
             })
 
